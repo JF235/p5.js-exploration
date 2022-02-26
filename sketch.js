@@ -11,6 +11,5 @@ function setup() {
 
 function draw() {
   background('#282a36')
-  new CMap()
 }
 

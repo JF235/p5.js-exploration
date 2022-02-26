@@ -84,7 +84,11 @@ class Particle{
     }
 
     /**
-     * Desenha uma partícula como uma seta
+     * Desenha a partícula como um triângulo.
+     * 
+     * ___
+     * @param {int} b Base do triângulo 
+     * @param {int} h Altura do triângulo 
      */
     drawArrow(b = 0, h = 0){
         // Configurações Padrões
@@ -161,7 +165,7 @@ class Particle{
      * - vel += acc
      * - pos += vel
      * 
-     * ---
+     * ___
      * @TODO Preciso rever o comportamento
      * para velocidades muito grandes.
      * @TODO Como lidar com uma partícula que não desenha seu próprio caminho
@@ -193,12 +197,15 @@ class Particle{
 
     /**
      * Checa se a partícula não sai do domínio do canvas.
-     *     
+     *
+     * ___
+     * 
      * @param {int} coordinates 
      * 
-     * Se coordinates for 1 (considero que a origem está no UpperLeft)
+     * ___
      * 
-     * Se coordinates for 2 (considero que a origem está no centro do canvas)
+     * - Se coordinates for 1 (considero que a origem está no UpperLeft)
+     * - Se coordinates for 2 (considero que a origem está no centro do canvas)
      */
     edges(coordinates){
         if (coordinates == 1){

@@ -1,8 +1,13 @@
 class Spring {
     /**
      * Cria uma mola
+     * 
+     * ___
+     * 
      * @param {p5.Vector} r0 Posição inicial
      * @param {p5.Vector} r1 Posição Final
+     * 
+     * ___
      * 
      * A mola será desenhada com `no_of_winding` voltas
      * com altura `height` e comprimento `length`.

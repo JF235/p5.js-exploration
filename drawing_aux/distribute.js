@@ -2,11 +2,13 @@
  * Cria uma lista com `n` vetores distribuídos
  * linearmente entre as posições `r0` e `r1`.
  * 
+ * ---
+ * 
  * @param {p5.Vector} r0 Posição Inicial
  * @param {p5.Vector} r1 Posição Final
  * @param {int} n Número de pontos
  * 
- * @returns {Array(P5.Vector)}
+ * @returns Array 1D com vetores
  */
 function distribute_evenly_1D(r0, r1, n){
     var w = p5.Vector.sub(r1, r0)
@@ -29,8 +31,17 @@ function distribute_evenly_1D(r0, r1, n){
 }
 
 /**
- * Distribui igualmente em um arranjo bidimensional
- * com primeiro ponto em r0 e último ponto em r1.
+ * Cria uma matriz de `nrows` x `ncols` de vetores
+ * distribuídos desde `r0` até `r1`.
+ * 
+ * ---
+ * 
+ * @param {p5.Vector} r0 Primeira posição (Top, Left)
+ * @param {p5.Vector} r1 Última posição (Bottom, Right )
+ * @param {int} nrows número de linhas
+ * @param {int} ncols número de coluns
+ * 
+ * @returns Array 2D com vetores
  */
 function distribute_evenly_2D(r0, r1, nrows, ncols){
     var width = r1.x - r0.x
