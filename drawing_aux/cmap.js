@@ -1,4 +1,17 @@
 class CMap{
+    /**
+     * Um colormap é uma classe que contêm uma lista `CMap.colors` com 'quadruplas' de valores que vão de 0-1, representado uma cor RGBA.
+     * 
+     * ---
+     * 
+     * @param {String} name String que diz o nome do colormap.
+     * 
+     * ---
+     * 
+     * CMaps disponíveis:
+     * 
+     * - 'viridis'
+     */
     constructor(name){
         if (name == 'viridis'){
             this.colors =  [[0.267004, 0.004874, 0.329415, 1.0],

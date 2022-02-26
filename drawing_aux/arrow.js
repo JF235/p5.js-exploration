@@ -1,4 +1,14 @@
 class Arrow{
+    /**
+     * Classe que indica uma flecha de `r0` até `r1`.
+     * 
+     * Nessa classe, estão guardadas a espessura do traço da flecha, o tamanho da ponta e a altura da ponta.
+     * 
+     * ---
+     * 
+     * @param {p5.Vector} r0 Vetor que indica a posição inicial.
+     * @param {p5.Vector} r1 Vetor que indica a posição final.
+     */
     constructor(r0, r1){
         this.r0 = r0
         this.r1 = r1
@@ -10,8 +20,16 @@ class Arrow{
         this.weight = 2
         //this.color = 'white'
     }
+    
+    /**
+    * Desenha a flecha.
+    * 
+    * Para desenhar, primeiro realiza um ajuste de proporções para evitar flechas muito grandes e flechas muito pequenas (com auxílio do método `adjust_proportions()`), depois irá desenhar a linha e o triângulo correspondente à ponta. 
+    * 
+    * A cor de `fill` e `stroke` podem ser passadas antes, equanto que `strokeWeight` é definida internamente pelo atributo `Arrow.weight`.
+    */
+    draw(){  
 
-    draw(){
         this.adjust_proportions()
         
         //stroke(this.color)
@@ -31,8 +49,11 @@ class Arrow{
     }
 
     /**
-     * Ajusta a proporção entre
-     * o tamanho da cabeça da flecha
+     * Ajusta a proporção entre o tamanho da cabeça da flecha.
+     * 
+     * As proporções escolhidas são totalmente arbitrárias.
+     * 
+     * @TODO Sistematizar essas escalas
      */
     adjust_proportions(){
         this.weight = this.size/25
