@@ -59,14 +59,14 @@ class Particle{
     /**
      * Desenha a partícula no canvas usando configurações internas.
      * 
-     * Posição do desenho = `pos` {p5.Vector}
-     * stroke = `stroke_color` {color}
-     * strokeWeight = `stroke_weight` {float}
-     * fill = `fill_color` {fill_color}
+     * - Posição do desenho = `pos` {p5.Vector}
+     * - stroke = `stroke_color` {color}
+     * - strokeWeight = `stroke_weight` {float}
+     * - fill = `fill_color` {fill_color}
      * 
      * Tem comportamento alterado seguindo os parâmetros booleanos
-     * `this.stroke == false` -> `noStroke()`
-     * `this.fill == false` -> `noFill()`
+     * - `this.stroke == false` -> `noStroke()`
+     * - `this.fill == false` -> `noFill()`
      */
     draw(){
         stroke(this.stroke_color);
@@ -157,10 +157,11 @@ class Particle{
      * o método de Euler para resolver a segunda
      * Lei de Newton a = F/m
      * 
-     * acc = this.force/this.mass
-     * vel += acc
-     * pos += vel
+     * - acc = this.force/this.mass
+     * - vel += acc
+     * - pos += vel
      * 
+     * ---
      * @TODO Preciso rever o comportamento
      * para velocidades muito grandes.
      * @TODO Como lidar com uma partícula que não desenha seu próprio caminho
@@ -194,7 +195,9 @@ class Particle{
      * Checa se a partícula não sai do domínio do canvas.
      *     
      * @param {int} coordinates 
+     * 
      * Se coordinates for 1 (considero que a origem está no UpperLeft)
+     * 
      * Se coordinates for 2 (considero que a origem está no centro do canvas)
      */
     edges(coordinates){
@@ -292,6 +295,7 @@ class Particle{
 
     /**
      * Retorna o caminho da partícula. 
+     * 
      * É dessa maneira que pode ser editado.
      * @returns {Path}
      */
