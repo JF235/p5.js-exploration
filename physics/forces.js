@@ -38,6 +38,11 @@ class UniversalGravity extends Force{
 }
 
 class UniformGravity extends Force{
+    /**
+     * 
+     * @param {float} particle partícula
+     * @param {float} factor fator (por padrão = 1/100)
+     */
     constructor(particle, factor = 1/100){
         var scaled_gravity = 9.8 * factor
         var m = particle.get_mass()
@@ -65,6 +70,12 @@ class Drag extends Force{
 }
 
 class Friction extends Force{
+    /**
+     * 
+     * @param {Particle} particle partícula
+     * @param {float} mu coeficiente de atrito (default = 0.15)
+     * @param {float} N normal 
+     */
     constructor(particle, mu = 0.15, N = 1){
        // A velocidade da partícula é usada para parar a partícula quando
        // esta estiver muito devagar.
@@ -77,7 +88,7 @@ class Friction extends Force{
         var v = particle.get_velocity().copy()
 
         if (v.mag() < 0.001){
-            this.vector = createVector(0, 0)
+            super(createVector(0, 0))
             particle.set_velocity(createVector(0, 0))
         }
         else if(v.mag() > 1){

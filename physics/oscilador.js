@@ -95,3 +95,62 @@ class Oscilador{
         return this.pos2
     }
 }
+
+
+class Rope{
+    constructor(N, length, individual_rest_len, k){
+        this.N = N
+        this.length = length
+        this.individual_rest_len = individual_rest_len
+        this.k = k
+
+        this.particles = []
+
+        for (var i = 0; i < N; i++){
+            var p = new Particle(5, createVector(300, length/N * i))
+            this.particles.push(p)
+          }
+    }
+
+    update(){
+        for (var i = 0; i < this.N; i++){
+            if(i != 0){
+              var f1 = new SpringForce(this.particles[i].get_position(), this.particles[i - 1].get_position(), this.individual_rest_len, this.k)
+              var f2 = new SpringForce(this.particles[i - 1].get_position(), this.particles[i].get_position(), this.individual_rest_len, this.k)
+              var g = new UniformGravity(this.particles[i], 1/100)
+              var fric = new Friction(this.particles[i],)
+        
+              this.particles[i - 1].applyForce(f1)
+              this.particles[i].applyForce(f2)
+              this.particles[i].applyForce(g)
+              this.particles[i].applyForce(fric)
+            }
+          }
+        
+          for (var i = 0; i < this.N; i++){
+            this.particles[i].update()
+        
+            if(i == 0){
+                this.particles[i].set_position(createVector(300, 0))
+                this.particles[i].set_velocity(createVector(0,0))
+            }
+          }
+        
+        
+          if (mouseIsPressed){
+            this.particles[this.N - 1].set_position(createVector(mouseX, mouseY))
+            this.particles[this.N - 1].set_velocity(createVector(0 , 0))
+          }
+    }
+
+    draw(){   
+        for (var i = 0; i < this.N; i++){
+        
+            if(i != 0){
+              strokeWeight('2')
+              stroke('white')
+              line(this.particles[i - 1].get_x(), this.particles[i - 1].get_y(), this.particles[i].get_x(), this.particles[i].get_y())
+            }
+          }
+    }
+}
