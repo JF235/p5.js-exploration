@@ -178,10 +178,10 @@ class Particle{
         this.pos.add(this.vel)
         
         // Evita velocidades muito altas.
-        if (this.vel.mag() > 10){
-            this.vel = createVector(0, 0)
-            this.pos = createVector(width/2 + random(-20, 20), height/2 + random(-20, 20))
-        }
+        // if (this.vel.mag() > 10){
+        //     this.vel = createVector(0, 0)
+        //     this.pos = createVector(width/2 + random(-20, 20), height/2 + random(-20, 20))
+        // }
 
         // Adiciona as entradas anteriores na lista do caminho
         var record = this.path.record
