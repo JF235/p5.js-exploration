@@ -29,6 +29,13 @@ class Path{
         this.record = []
     }
 
+    add(new_position){
+        this.record.push(new_position);
+        if (this.record.length > this.size){
+            this.record.shift();
+        }
+    }
+
     /**
      * Desenha todo o caminho registrado em `this.record`
      * levando em conta os parâmetros

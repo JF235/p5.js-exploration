@@ -184,12 +184,10 @@ class Particle{
         // }
 
         // Adiciona as entradas anteriores na lista do caminho
-        var record = this.path.record
-        var new_position = this.pos.copy();
-        record.push(new_position);
-        if (record.length > this.path.get_size()){
-            record.shift();
-        }
+        
+        var new_position = this.pos.copy()
+        this.path.add(new_position)
+
 
         // Reseta a forca
         this.force = createVector(0, 0)
